@@ -17,8 +17,8 @@ model Parts {
   description String?
   unitId Int
   units Units @relation(fields: [unitId], references: [id])
-  vendorId Int
-  vendors Vendors @relation(fields: [vendorId], references: [id])
+  vendorId Int?
+  vendors Vendors? @relation(fields: [vendorId], references: [id])
 
 }
 

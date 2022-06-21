@@ -62,8 +62,26 @@ const resolvers = {
                     partName: args.partName,
                     description: args.description,
                     unitId: args.unitId,
+                    vendorId: args.vendorId ? args.vendorId : null
+                }
+            })
+        },
+
+        async editPart(parent, args){
+            return await prisma.parts.update({
+                where:{id: args.id},
+                data: {
+                    partName: args.partName,
+                    description: args.description,
+                    unitId: args.unitId,
                     vendorId: args.vendorId
                 }
+            })
+        },
+
+        async deletePart(parent, args){
+            return await prisma.parts.delete({
+                where:{id: args.id}
             })
         }
 
