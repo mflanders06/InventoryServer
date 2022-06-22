@@ -45,7 +45,7 @@ const typeDefs = gql`
         createVendor(vendorName: String!, website: String, busPhone: String, cellPhone: String): Vendors
         createPart(partName: String!, description: String, unitId: Int!, vendorId: Int): Parts
         editPart(id: Int!, partName: String!, description: String, unitId: Int!, vendorId: Int): Parts
-        deletePart(id: Int!)
+        deletePart(id: Int!): Parts
     }
 
 
